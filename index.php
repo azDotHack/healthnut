@@ -12,13 +12,23 @@
 <body>
   <div id="head">
     <div id="login">
-      <h3>Log In</h3>
       <form action="#" method="post">
-        <div>
-          <label>User ID</label><input type="text" name="user_id"><br>
-          <label>Password</label><input type="password" name="password"><br>
-          <input type="submit" value="Log In" id="login_sub">
-        </div>
+        <table>
+          <tr>
+            <th colspan="3">Log In</th>
+          </tr>
+          <tr>
+            <td><label>User ID</label></td>
+            <td><input type="text" name="user_id"></td>
+          </tr>
+          <tr>
+            <td><label>Password</label></td>
+            <td><input type="password" name="password"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="submit" value="Log In" id="login_sub"></td>
+          </tr>
+        </table>
       </form>
     </div>
     <img src="" alt=""> <!-- TODO add a logo -->
@@ -26,8 +36,12 @@
     <h1><a href="">HEALTHY HABITS START HERE</a></h1>
   </div>
   <div id="img_slide">
-      <img src="stock_img0.jpg" alt="WIP">
-      <!-- TODO create the slide show with multiple images and give this image an alt -->
+      <figure>
+        <div id="img0"><img src="stock_img0.jpg" alt=""></div> <!-- TODO insert appropriate alt description -->
+        <div id="img1"><img src="stock_img1.jpg" alt=""></div> <!-- TODO insert appropriate alt description -->
+        <div id="img2"><img src="stock_img2.jpg" alt=""></div> <!-- TODO insert appropriate alt description -->
+        <div id="img3"><img src="stock_img3.jpg" alt=""></div> <!-- TODO insert appropriate alt description -->
+      </figure>
   </div>
   <div id="foot">
     <h2>Our Mission</h2>
