@@ -4,9 +4,11 @@
 }
 
 body {
-  
+  background: linear-gradient(#2F8BCB, #0E1D61);
+  font-family: "Helvetica Neue"
+  color: white;
 }
 
-#img_slide {
-  text-align: center;
+#login {
+  float: right;
 }
