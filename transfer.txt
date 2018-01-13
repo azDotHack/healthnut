@@ -1,0 +1,7 @@
+USER
+hackaz2
+
+CD /haz2
+LCD "C:\Users\Marry\Documents\MyPrograms\Hackathon\hackaz2"
+MPUT *
+BYE

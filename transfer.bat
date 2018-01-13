@@ -1,0 +1,1 @@
+FTP -n -i -s:transfer.txt localhost
