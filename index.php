@@ -33,7 +33,7 @@
     </div>
     <img src="" alt=""> <!-- TODO add a logo -->
     <h3>Don't have an account?</h3>
-    <h1><a href="">HEALTHY HABITS START HERE</a></h1>
+    <h1><a href="register.php">HEALTHY HABITS START HERE</a></h1>
   </div>
   <div id="img_slide">
       <figure>
