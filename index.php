@@ -17,6 +17,7 @@
         <div>
           <label>User ID</label><input type="text" name="user_id"><br>
           <label>Password</label><input type="password" name="password"><br>
+          <input type="submit" value="Log In" id="login_sub">
         </div>
       </form>
     </div>
