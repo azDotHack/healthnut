@@ -131,6 +131,7 @@
               $verify_login = query("SELECT * FROM users WHERE id='$id' AND password=SHA('$password')");
               if ($row = mysqli_fetch_assoc($verify_login)) {
                 $_SESSION['user_id'] = $row['first_name'] . ' ' . $row['last_name'];
+                $_SESSION['id'] = $row['id'];
                 header("Refresh:0");
               } else {
                 echo "<td><p id='invalid'><em>Invalid login</em></p></td>";

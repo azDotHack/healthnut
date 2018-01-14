@@ -13,26 +13,26 @@ table, th, td {
     border: thick groove white;
 }
 
-th, td{
+th, td {
   padding: 10px;
 }
 
-td.complete{
+td.complete {
   width: 10%;
   text-align: center;
 }
 
-.flex-container{
+.flex-container {
   display: flex;
 }
 
-.flex-container>div{
+.flex-container > div {
   margin: 20px;
 }
 
-.section{
-  margin:10px;
-  padding:20px;
+.section {
+  text-align: center;
+  margin-top: 20px;
 }
 
 #logout {
@@ -66,10 +66,6 @@ div#logo, #welcome {
   display: inline-block;
 }
 
-#welcome {
-
-}
-
 button {
   padding: 10px;
   border-radius: 15px;
@@ -84,6 +80,10 @@ button:hover {
   color: #CCC;
   transition: background-color 0.5s ease-in-out;
   transition: color 0.5s ease-in-out;
+}
+
+footer div {
+  margin: 25px 0;
 }
 </style>
 
@@ -107,81 +107,46 @@ button:hover {
       </header>
 
       <div id="tasklist">
-        <!-- TODO implement PHP code to generate this HTML -->
-        <table class="mytask">
-          <tr>
-            <th>Daily</th>
-            <th>Due: 1/14/2018</th>
-          </tr>
-          <tr>
-            <td class="task">Do 10 Jumping Jacks</td>
-            <td class="complete">
-              <form>
-                <button type="button" onclick="alert('Conglaturation! Your winner')">Complete!</button>
-              </form>
-            </td>
-          </tr>
-        </table>
-        <br>
-        <table class="mytask">
-          <tr>
-            <th>Daily</th>
-            <th>Due: 1/14/2018</th>
-          </tr>
-          <tr>
-            <td class="task">Do 10 Lunges</td>
-            <td class="complete">
-              <form>
-                <button type="button" onclick="alert('Conglaturation! Your winner')">Complete!</button>
-              </form>
-            </td>
-          </tr>
-        </table>
-        <br>
+          <?php
+            function getDueDate($type) {
+              if (strtolower($type) == 'daily') {
+                $datetime = new DateTime('tomorrow');
+                return $datetime->format('Y-m-d H:i:s');
+              } else {
+                return date("Y-m-d", strtotime("+1 week"));
+              }
+            }
 
-        <table class="mytask">
-          <tr>
-            <th>Weekly: At the Gym</th>
-            <th>Due: 1/19/2018</th>
-          </tr>
-          <tr>
-            <td class="task">Run 5km on the Treadmill</td>
-            <td class="complete">
-              <form>
-                <button type="button" onclick="alert('Conglaturation! Your winner')">Complete!</button>
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <td class="task">Bench Press: 5 sets of 5 reps</td>
-            <td class="complete">
-              <form>
-                <button type="button" onclick="alert('Conglaturation! Your winner')">Complete!</button>
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <td class="task">Swim 200m</td>
-            <td class="complete">
-              <form>
-                <button type="button" onclick="alert('Conglaturation! Your winner')">Complete!</button>
-              </form>
-            </td>
-          </tr>
-        </table>
-        <br>
-        <!-- end of PHP code generation -->
+            require_once("constants.php");
+            $result = query("SELECT * FROM goals WHERE user_id='" . $_SESSION['id'] . "'");
+
+            $count = 0;
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo "<table class='mytask'>";
+              echo "<tr>";
+              echo "<th>" . $row['type'] . "</th>";
+              echo "<th>Due: " . getDueDate($row['type']) . "</th>";
+              echo "</tr>";
+              echo "<td class='task'>";
+              echo $row['habit_name'];
+              echo "</td>";
+              echo "<td class='complete'>";
+              echo "<form><button type=\"button\" onclick='alert(\"Conglaturation! Your winner\")'>Complete!</button></form>";
+              echo "</td>";
+              echo "</tr>";
+              echo "</table>";
+              echo "<br>";
+              ++$count;
+            }
+            if ($count == 0) {
+              echo "<tr><th><em>You don't have any goals yet!</em></th></tr>";
+            }
+          ?>
       </div>
-
       <footer>
-          <a href="tasks.php">More Details</a>
+          <div><a href="goal.php">Start a Goal</a></div>
+          <div><a href="tasks.php">More Details</a></div>
       </footer>
-    </div>
-
-    <div id="motivators" class="section">
-      <header>
-        <h3>Your Motivators</h3>
-      </header>
     </div>
   </div>
 
@@ -220,6 +185,11 @@ button:hover {
       <footer>
         <a href="social.php">See More</a>
       </footer>
+    </div>
+    <div id="motivators" class="section">
+      <header>
+        <h3>Your Motivators</h3>
+      </header>
     </div>
   </div>
 </div>
