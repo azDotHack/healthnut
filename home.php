@@ -99,7 +99,7 @@ footer div {
   </div>
 </div>
 
-<div class="flex-container">
+<div id="content" class="flex-container">
   <div id="west" style="flex-grow: 6">
     <div id="tasks" class="section">
       <header>
