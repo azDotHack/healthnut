@@ -1,0 +1,33 @@
+Fitness quotient: poor, below average, average, above average, excellent (determines initial intensity)
+age:5-17, 18-64, 65+ (determines number of tasks given)
+BMI: underweight(<18), healthy(18-24), overweight(25-29), obese(30-39), extremely obese(40+) (determines scaling)
+
+
+BMI = Weight (lb) / (Height (in))^2 x 703
+
+FQ = 1-5
+BMI = 1-5
+age= 1-3
+
+Types
+-Aerobic (running, swimming, dancing, biking, stair runs)
+-Strength (weights, machines, resistance bands)
+-Flexibility (yoga, stretching)
+-Balance (heel-to-toe walking, standing on one foot, tai chi)
+
+Goals (weight exercise types):
+- Lose weight (70,5,15,10)
+- gain muscle (15,60,10,15)
+- endurance (60,10,10,20)
+- flexible (25,15,50,10)
+
+Scaling
+- every week that the user completes at least 70% of tasks, increase intensity by (5,10,8,5,3)% based on BMI
+- if the user completes between 30 and 70% of tasks, keep intensity the same
+- if the user completes less than 30% of tasks, reduce intensity by % based on BMI
+
+
+Aerobic: Run x(2) miles or for y(20) minutes, swim x(500) meters or for y(20) minutes, climb x(5) floors of stairs
+Strength: Bench press x(40) lbs: y(5) sets of z(5) reps, Do x(10) pushups
+Flexibility: Piriformis stretch for x(1) times for y(30) seconds, Butterfly stretch for x(1) times for y(30) seconds
+Balance: Plank for x(30) seconds, Balance on each foot for x(10) seconds
