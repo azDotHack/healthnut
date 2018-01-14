@@ -4,7 +4,89 @@
   <meta charset="utf-8">
   <title>Healthy Habits</title>
   <link rel="stylesheet" href="style.css">
-  <script src="jquery-3.2.1.js"></script>
+  <style>
+  @keyframes animSlide {
+    0% {
+      left: 0%;
+    }
+    10% {
+      left: 0%;
+    }
+    12% {
+      left: -100%;
+    }
+    22% {
+      left: -100%;
+    }
+    24% {
+      left: -200%;
+    }
+    34% {
+      left: -200%;
+    }
+    36% {
+      left: -300%;
+    }
+    46% {
+      left: -300%;
+    }
+    48% {
+      left: -400%;
+    }
+    58% {
+      left: -400%;
+    }
+    60% {
+      left: -300%;
+    }
+    70% {
+      left: -300%;
+    }
+    72% {
+      left: -200%;
+    }
+    82% {
+      left: -200%;
+    }
+    84% {
+      left: -100%;
+    }
+    94% {
+      left: -100%;
+    }
+    96% {
+      left: -0%;
+    }
+  }
+
+  #login {
+    float: right;
+    margin-top: 20px;
+  }
+
+  #img_slide {
+    overflow: hidden;
+    height: 350px;
+  }
+
+  #img_slide figure div {
+    width: 20%;
+    float: left;
+  }
+
+  #img_slide figure img {
+    width: 100%;
+    float: left;
+  }
+
+  #img_slide figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s animSlide infinite;
+  }
+  </style>
   <script>
 
   </script>
