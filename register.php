@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Healthy Habits -- Register</title>
     <link rel="stylesheet" href="style.css">
+    <link type="image/icon" rel="icon" href="icon.png" />
     <style>
     h1 {
       margin-top: 25px;

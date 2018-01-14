@@ -30,14 +30,36 @@ td.complete{
   margin:10px;
   padding:20px;
 }
+
+#logout {
+  text-decoration: none;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  color: white;
+  background-color: rgba(187, 187, 255, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  transition: background-color 0.5s ease-in-out;
+  border: none;
+  font-size: inherit;
+}
+
+#logout:hover {
+  background-color: rgba(187, 187, 255, 1);
+  transition: background-color 0.5s ease-in-out;
+  background-color: rgba(187, 187, 255, 1);
+}
 </style>
 
 
 <div id="head">
   <!--TODO insert img references -->
   <img id="logo" src="" alt="Healthy Habits">
-  <h1>Welcome back, User!</h1>
+  <h1>Welcome back, <?php echo $_SESSION['user_id']; ?>!</h1>
   <img id="profile" src="" alt="Profile">
+  <form action="index.php" method="post">
+    <div><input type="hidden" name="logout" value="logout"></div>
+    <div><input id="logout" type="submit" value="Log Out"></div>
+  </form>
 </div>
 
 <div class="flex-container">

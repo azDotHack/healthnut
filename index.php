@@ -3,139 +3,16 @@
 <head>
   <meta charset="utf-8">
   <title>Healthy Habits</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-  @keyframes animSlide {
-    0% {
-      left: 0%;
+  <link type="image/icon" rel="icon" href="icon.png" />
+  <?php
+    session_start();
+    if (isset($_SESSION['user_id'])) {
+      if (array_key_exists('logout', $_POST)) {
+        session_destroy();
+        header("Refresh:0");
+      }
+      require_once("home.php");
+    } else {
+      require_once("new_user.php");
     }
-    10% {
-      left: 0%;
-    }
-    12% {
-      left: -100%;
-    }
-    22% {
-      left: -100%;
-    }
-    24% {
-      left: -200%;
-    }
-    34% {
-      left: -200%;
-    }
-    36% {
-      left: -300%;
-    }
-    46% {
-      left: -300%;
-    }
-    48% {
-      left: -400%;
-    }
-    58% {
-      left: -400%;
-    }
-    60% {
-      left: -300%;
-    }
-    70% {
-      left: -300%;
-    }
-    72% {
-      left: -200%;
-    }
-    82% {
-      left: -200%;
-    }
-    84% {
-      left: -100%;
-    }
-    94% {
-      left: -100%;
-    }
-    96% {
-      left: -0%;
-    }
-  }
-
-  #login {
-    float: right;
-    margin-top: 20px;
-  }
-
-  #img_slide {
-    overflow: hidden;
-    height: 350px;
-  }
-
-  #img_slide figure div {
-    width: 20%;
-    float: left;
-  }
-
-  #img_slide figure img {
-    width: 100%;
-    float: left;
-  }
-
-  #img_slide figure {
-    position: relative;
-    width: 500%;
-    margin: 0;
-    left: 0;
-    animation: 20s animSlide infinite;
-  }
-  </style>
-  <script>
-
-  </script>
-</head>
-<body>
-  <div id="head">
-    <div id="login">
-      <form action="" method="post">
-        <table>
-          <tr>
-            <th colspan="3">Log In</th>
-          </tr>
-          <tr>
-            <td><label>User ID</label></td>
-            <?php
-              if (isset($_POST['user_id'] && isset($_POST['password'])) {
-                //require_once("constants.php");
-
-              }
-            ?>
-            <td><input type="text" name="user_id"></td>
-          </tr>
-          <tr>
-            <td><label>Password</label></td>
-            <td><input type="password" name="password"></td>
-          </tr>
-          <tr>
-            <td colspan="2"><input type="submit" value="Log In" id="login_sub"></td>
-          </tr>
-        </table>
-      </form>
-    </div>
-    <img src="" alt=""> <!-- TODO add a logo -->
-    <h3>Don't have an account?</h3>
-    <h1><a href="register.php">HEALTHY HABITS START HERE</a></h1>
-  </div>
-  <div id="img_slide">
-      <figure>
-        <div id="img0"><img src="stock_img0.jpg" alt=""></div> <!-- TODO insert appropriate alt description -->
-        <div id="img1"><img src="stock_img1.jpg" alt=""></div> <!-- TODO insert appropriate alt description -->
-        <div id="img2"><img src="stock_img2.jpg" alt=""></div> <!-- TODO insert appropriate alt description -->
-        <div id="img3"><img src="stock_img3.jpg" alt=""></div> <!-- TODO insert appropriate alt description -->
-      </figure>
-  </div>
-  <div id="foot">
-    <h2>Our Mission</h2>
-    <p>
-      Here at Healthy Habits, our mission is to improve the health of the planet by personalizing daily and weekly challenges and slowly and steadily building new, healthy, habitual lifestyles planned for the long term.
-    </p>
-  </div>
-</body>
-</html>
+  ?>
