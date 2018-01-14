@@ -1,47 +1,60 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My Tasks</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  .mytask, .motivatortask {
+      border-collapse: collapse;
+  }
 
-<style>
-.mytask, .motivatortask {
-    border-collapse: collapse;
-}
+  table, th, td {
+      border: 1px solid black;
+  }
 
-table, th, td {
-    border: 1px solid black;
-}
+  th, td{
+    padding: 10px;
+  }
 
-th, td{
-  padding: 10px;
-}
+  td.complete{
+    width: 10%;
+    text-align: center;
+  }
 
-td.complete{
-  width: 10%;
-  text-align: center;
-}
+  .flex-container{
+    display: flex;
+    flex-direction: row;
+  }
 
-.flex-container{
-  display: flex;
-}
+  .flex-container>div{
+    margin: 20px;
+  }
 
-.flex-container>div{
-  margin: 20px;
-}
+  .section{
+    margin:10px;
+    padding:20px;
+  }
+  </style>
+</head>
 
-.section{
-  margin:10px;
-  padding:20px;
-}
-</style>
+<body>
+  <div id="head">
+    <!--TODO insert img references -->
+    <img id="logo" src="" alt="Healthy Habits">
+    <h1>Welcome back, User!</h1>
+    <img id="profile" src="" alt="Profile">
+  </div>
 
-
-<div id="head">
-  <!--TODO insert img references -->
-  <img id="logo" src="" alt="Healthy Habits">
-  <h1>Welcome back, User!</h1>
-  <img id="profile" src="" alt="Profile">
-</div>
-
-<div id="content" class="flex-container">
-  <div id="west" style="flex-grow: 6">
+  <div id="content">
+    <div class="flex-container">
+      <a href="home.php" style="float:left">Return to Home</a>
+      <h2 style="flex-grow:0">Goals:</h2>
+      <ul style="flex-grow:0">
+        <li>Lose Weight</li>
+        <li>Gain Muscle</li>
+      </ul>
+    </div>
     <div id="tasks" class="section">
       <header>
         <h3>My Tasks/Habits</h3> <!-- TODO change this text -->
@@ -121,49 +134,6 @@ td.complete{
       </footer>
     </div>
 
-    <div id="motivators" class="section">
-      <header>
-        <h3>Your Motivators</h3>
-      </header>
-    </div>
   </div>
-
-  <div id="east" style="flex-grow: 4">
-    <div id="social" class="section">
-      <header>
-        <h3>Social</h3>
-      </header>
-
-      <div id="verifylist">
-        <!-- TODO implement PHP to generate this HTML -->
-        <table class="motivatortask">
-          <tr>
-            <th rowspan="3"><img id="motivatorpfp" src="" alt="James Rund"></th>
-            <th>James Rund</th>
-            <th>Verify:</th>
-          </tr>
-          <tr>
-            <td class="task">Fall Asleep at Hackathon</td>
-              <td class="complete">
-                <form>
-                  <button type="button" onclick="alert('Conflagration! They winned')">Complete!</button>
-                </form>
-              </td>
-          </tr>
-          <tr>
-            <td class="task">Pitch Hackathon idea</td>
-              <td class="complete">
-                Incomplete
-              </td>
-          </tr>
-        </table>
-        <br>
-        <!-- end of PHP code generation -->
-      </div>
-
-      <footer>
-        <a href="social.php">See more</a> <!--TODO link this correctly-->
-      </footer>
-    </div>
-  </div>
-</div>
+</body>
+</html>
