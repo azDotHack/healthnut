@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>My Tasks</title>
   <link rel="stylesheet" href="style.css">
+  <link type="image/icon" rel="icon" href="icon.png" />
   <style>
   .mytask, .motivatortask {
       border-collapse: collapse;
@@ -35,31 +36,34 @@
     margin:10px;
     padding:20px;
   }
+
+  #logo{
+    height:150px;
+    weight:150px;
+  }
   </style>
 </head>
 
 <body>
   <div id="head">
-    <!--TODO insert img references -->
-    <img id="logo" src="" alt="Healthy Habits">
-    <h1>Welcome back, User!</h1>
+    <!--TODO insert img references, reorg head bar -->
+    <a href="index.html">
+      <img id="logo" src="logo.png" alt="Healthy Habits">
+    </a>
+    <h1>My Tasks</h1>
     <img id="profile" src="" alt="Profile">
   </div>
 
   <div id="content">
     <div class="flex-container">
       <a href="home.php" style="float:left">Return to Home</a>
-      <h2 style="flex-grow:0">Goals:</h2>
-      <ul style="flex-grow:0">
+      <h2 style="flex-grow:2">Goals:</h2>
+      <ul style="flex-grow:1">
         <li>Lose Weight</li>
         <li>Gain Muscle</li>
       </ul>
     </div>
     <div id="tasks" class="section">
-      <header>
-        <h3>My Tasks/Habits</h3> <!-- TODO change this text -->
-      </header>
-
       <div id="tasklist">
 
         <!-- TODO implement PHP code to generate this HTML -->
@@ -128,10 +132,6 @@
         <br>
         <!-- end of PHP code generation -->
       </div>
-
-      <footer>
-          <a href="tasks.php">More Details</a> <!-- TODO link this correctly -->
-      </footer>
     </div>
 
   </div>

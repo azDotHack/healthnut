@@ -147,6 +147,15 @@ td.complete{
       <header>
         <h3>Your Motivators</h3>
       </header>
+
+        <!-- TODO PHP code generation -->
+      <div id="motivatorlist" class="flex-container">
+        <div>
+          <img src="" alt="some picture">
+          <h6>James Rund</h6>
+        </div>
+
+      </div>
     </div>
   </div>
 
