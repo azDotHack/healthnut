@@ -34,14 +34,14 @@
   <body>
     <h1>Your Healthy Habits Start Now!</h1>
     <div id="form">
-      <form action="/index.php">
+      <form action="register_submit.php" method="post">
         <?php
-          function select($min, $max) {
-            echo "<select name='height_inches'>";
+          function select($name, $min, $max) {
+            echo "<select name='$name'>\n";
             for ($i = $min; $i < $max; ++$i) {
-              echo "<option value='$i'>$i</option>";
+              echo "<option value='$i'>$i</option>\n";
             }
-            echo "</select>";
+            echo "</select>\n";
           }
         ?>
         <table>
@@ -68,17 +68,17 @@
           <tr>
             <td><label>Height (lbs)</label></td>
             <td>
-              <?php select(0, 10); ?> feet and
-              <?php select(0, 12); ?> inches
+              <?php select("height_feet", 0, 10); ?> feet and
+              <?php select("height_inches", 0, 12); ?> inches
             </td>
           </tr>
           <tr>
             <td><label>Weight</label></td>
-            <td><?php select(0, 2001); ?> pounds</td>
+            <td><?php select("weight", 0, 2001); ?> pounds</td>
           </tr>
           <tr>
             <td><label>Age</label></td>
-            <td><?php select(0, 120); ?> years</td>
+            <td><?php select("age", 0, 120); ?> years</td>
           </tr>
           <tr>
             <td colspan="2" id="sub"><input type="submit" value="Create an Account"></td>
@@ -87,3 +87,4 @@
       </form>
     </div>
   </body>
+</html>
