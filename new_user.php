@@ -132,6 +132,7 @@
               if ($row = mysqli_fetch_assoc($verify_login)) {
                 $_SESSION['user_id'] = $row['first_name'] . ' ' . $row['last_name'];
                 $_SESSION['id'] = $row['id'];
+                $_SESSION['phone'] = $row['phone'];
                 header("Refresh:0");
               } else {
                 echo "<td><p id='invalid'><em>Invalid login</em></p></td>";

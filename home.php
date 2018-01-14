@@ -193,7 +193,16 @@ footer div {
     <div id="motivators" class="section">
       <header>
         <h3>Your Motivators</h3>
+        <table class="motivatortask">
+          <tr>
+            <th rowspan="3"><img class="profile" id="motivatorpfp" src="profile_pic.jpg" alt="James Rund"></th>
+            <th>James Rund</th>
+          </tr>
+        </table>
       </header>
     </div>
+    <footer>
+        <div><a href="">Find Your Motivators</a></div>
+    </footer>
   </div>
 </div>
