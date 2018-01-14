@@ -5,8 +5,12 @@
     border-collapse: collapse;
 }
 
+table {
+  border-radius: 30px;
+}
+
 table, th, td {
-    border: 1px solid black;
+    border: thick groove white;
 }
 
 th, td{
@@ -46,31 +50,63 @@ td.complete{
 #logout:hover {
   background-color: rgba(187, 187, 255, 1);
   transition: background-color 0.5s ease-in-out;
-  background-color: rgba(187, 187, 255, 1);
+}
+
+.profile {
+  width: 100px;
+  height: 100px;
+}
+
+#logo img {
+  width: 400px;
+  height: 200px;
+}
+
+div#logo, #welcome {
+  display: inline-block;
+}
+
+#welcome {
+
+}
+
+button {
+  padding: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+}
+
+button:hover {
+  background-color: #333;
+  color: #CCC;
+  transition: background-color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
 </style>
 
-
 <div id="head">
-  <!--TODO insert img references -->
-  <img id="logo" src="" alt="Healthy Habits">
-  <h1>Welcome back, <?php echo $_SESSION['user_id']; ?>!</h1>
-  <img id="profile" src="" alt="Profile">
-  <form action="index.php" method="post">
-    <div><input type="hidden" name="logout" value="logout"></div>
-    <div><input id="logout" type="submit" value="Log Out"></div>
-  </form>
+  <div id="logo"><img src="logo.png" alt="Healthy Habits"></div>
+  <div id="welcome">
+    <h1>Welcome back, <?php echo $_SESSION['user_id']; ?>!</h1>
+    <img class="profile" src="profile_pic.jpg" alt="Profile">
+    <form action="index.php" method="post">
+      <div><input type="hidden" name="logout" value="logout"></div>
+      <div><input id="logout" type="submit" value="Log Out"></div>
+    </form>
+  </div>
 </div>
 
 <div class="flex-container">
   <div id="west" style="flex-grow: 6">
     <div id="tasks" class="section">
       <header>
-        <h3>My Tasks/Habits</h3> <!-- TODO change this text -->
+        <h3>My Habits</h3>
       </header>
 
       <div id="tasklist">
-
         <!-- TODO implement PHP code to generate this HTML -->
         <table class="mytask">
           <tr>
@@ -87,7 +123,6 @@ td.complete{
           </tr>
         </table>
         <br>
-
         <table class="mytask">
           <tr>
             <th>Daily</th>
@@ -139,7 +174,7 @@ td.complete{
       </div>
 
       <footer>
-          <a href="tasks.php">More Details</a> <!-- TODO link this correctly -->
+          <a href="tasks.php">More Details</a>
       </footer>
     </div>
 
@@ -160,7 +195,7 @@ td.complete{
         <!-- TODO implement PHP to generate this HTML -->
         <table class="motivatortask">
           <tr>
-            <th rowspan="3"><img id="motivatorpfp" src="" alt="James Rund"></th>
+            <th rowspan="3"><img class="profile" id="motivatorpfp" src="profile_pic.jpg" alt="James Rund"></th>
             <th>James Rund</th>
             <th>Verify:</th>
           </tr>
@@ -182,9 +217,8 @@ td.complete{
         <br>
         <!-- end of PHP code generation -->
       </div>
-
       <footer>
-        <a href="social.php">See more</a> <!--TODO link this correctly-->
+        <a href="social.php">See More</a>
       </footer>
     </div>
   </div>

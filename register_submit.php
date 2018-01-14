@@ -7,6 +7,9 @@
     <meta type="robots" charset="noindex, nofollow">
     <link type="image/icon" rel="icon" href="icon.png" />
     <style>
+      body {
+        html,body { height:100%; }
+      }
       h2, h3 {
         font-size: 3em;
         margin: 100px;
