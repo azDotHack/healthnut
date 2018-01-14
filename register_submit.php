@@ -24,15 +24,15 @@
       require_once("constants.php");
 
       // gather data
-      $first_name = mysqli_real_escape_string($_POST["first_name"]);
-      $last_name = mysqli_real_escape_string($_POST["last_name"]);
-      $password = mysqli_real_escape_string($_POST["password"]);
-      $email = mysqli_real_escape_string($_POST["email"]);
-      $phone = mysqli_real_escape_string($_POST["phone"]);
-      $height_feet = mysqli_real_escape_string($_POST["height_feet"]);
-      $height_inches = mysqli_real_escape_string($_POST["height_inches"]);
-      $weight = mysqli_real_escape_string($_POST["weight"]);
-      $age = mysqli_real_escape_string($_POST["age"]);
+      $first_name = mysqli_real_escape_string($dbc, $_POST["first_name"]);
+      $last_name = mysqli_real_escape_string($dbc, $_POST["last_name"]);
+      $password = mysqli_real_escape_string($dbc, $_POST["password"]);
+      $email = mysqli_real_escape_string($dbc, $_POST["email"]);
+      $phone = mysqli_real_escape_string($dbc, $_POST["phone"]);
+      $height_feet = mysqli_real_escape_string($dbc, $_POST["height_feet"]);
+      $height_inches = mysqli_real_escape_string($dbc, $_POST["height_inches"]);
+      $weight = mysqli_real_escape_string($dbc, $_POST["weight"]);
+      $age = mysqli_real_escape_string($dbc, $_POST["age"]);
 
       // calculate height as a singular number
       $height = $height_feet + ($height_inches / 12);
@@ -40,12 +40,11 @@
       // submit data to databse
       $query_post = "INSERT INTO users (first_name, last_name, password, email, phone, height, weight, age) "
         . "VALUES ('$first_name', '$last_name', SHA('$password'), '$email', '$phone', '$height', '$weight', '$age')";
-
-      $result_post = mysqli_query($dbc, $query_post) or die(QUERY_ERROR . " result_post");
+      $result_post = query($query_post);
 
       // get unique id
       $query_get = "SELECT * FROM users ORDER BY id DESC LIMIT 0,1";
-      $result_get = mysqli_query($dbc, $query_get) or die(QUERY_ERROR . " result_get");
+      $result_get = query($query_get);
       $id = mysqli_fetch_array($result_get)[0] or die (QUERY_ERROR  . " getting the id");
       $uid = 127 * (int)$id + 12345;
 

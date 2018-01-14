@@ -94,13 +94,19 @@
 <body>
   <div id="head">
     <div id="login">
-      <form action="#" method="post">
+      <form action="" method="post">
         <table>
           <tr>
             <th colspan="3">Log In</th>
           </tr>
           <tr>
             <td><label>User ID</label></td>
+            <?php
+              if (isset($_POST['user_id'] && isset($_POST['password'])) {
+                //require_once("constants.php");
+
+              }
+            ?>
             <td><input type="text" name="user_id"></td>
           </tr>
           <tr>
@@ -128,7 +134,7 @@
   <div id="foot">
     <h2>Our Mission</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porttitor neque ligula, quis feugiat nisl tincidunt eu. Phasellus elementum libero eget justo sodales, congue porta leo placerat. Etiam dapibus, lacus sit amet ultricies bibendum, purus tellus vestibulum diam, quis convallis turpis mauris et nulla. In a gravida sem, non blandit lorem. Mauris hendrerit dapibus rhoncus. Nulla facilisi. Nulla efficitur egestas dolor ut maximus. Integer consequat nulla eget blandit accumsan.
+      Here at Healthy Habits, our mission is to improve the health of the planet by personalizing daily and weekly challenges and slowly and steadily building new, healthy, habitual lifestyles planned for the long term.
     </p>
   </div>
 </body>
