@@ -118,11 +118,15 @@ footer div {
             }
 
             require_once("constants.php");
-            $result = query("SELECT * FROM goals WHERE user_id='" . $_SESSION['id'] . "'");
+            $result_g = query("SELECT * FROM goals WHERE user_id='" . $_SESSION['id'] . "'");
+            $result_h = query("SELECT * FROM habits WHERE user_id='" . $_SESSION['id'] . "'");
+            $goal = mysqli_fetch_assoc($result_g);
 
             $count = 0;
-            while ($row = mysqli_fetch_assoc($result)) {
-              echo "<table class='mytask'>";
+            if ($goal) {++$count;}
+
+            echo "<table class='mytask'>";
+            while ($row = mysqli_fetch_assoc($result_h)) {
               echo "<tr>";
               echo "<th>" . $row['type'] . "</th>";
               echo "<th>Due: " . getDueDate($row['type']) . "</th>";
@@ -131,13 +135,13 @@ footer div {
               echo $row['habit_name'];
               echo "</td>";
               echo "<td class='complete'>";
-              echo "<form><button type=\"button\" onclick='alert(\"Conglaturation! Your winner\")'>Complete!</button></form>";
+              echo "<form><button type=\"button\" onclick='alert(\"Notification sent to motivators!\")'>Complete!</button></form>";
               echo "</td>";
               echo "</tr>";
-              echo "</table>";
-              echo "<br>";
               ++$count;
             }
+            echo "</table>";
+            echo "<br>";
             if ($count == 0) {
               echo "<tr><th><em>You don't have any goals yet!</em></th></tr>";
             }
@@ -168,7 +172,7 @@ footer div {
             <td class="task">Fall Asleep at Hackathon</td>
               <td class="complete">
                 <form>
-                  <button type="button" onclick="alert('Conflagration! They winned')">Complete!</button>
+                  <button type="button" onclick="alert('Notification sent to motivator!')">Complete!</button>
                 </form>
               </td>
           </tr>

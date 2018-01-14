@@ -7,14 +7,15 @@
     <meta type="robots" charset="noindex, nofollow">
     <link type="image/icon" rel="icon" href="icon.png" />
     <style>
-    html, body {   height: 100%; overflow: hidden; }
+    html, body {   height: 100%; }
 
     h1 {
       font-size: 3em;
     }
 
-    label {
-      marign: 25px;
+    form, select, input {
+      margin: 25px;
+      font-size: 2em;
     }
     </style>
     <script>
